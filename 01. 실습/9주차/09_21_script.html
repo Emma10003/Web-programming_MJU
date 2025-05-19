@@ -1,0 +1,39 @@
+<html>
+  <head> <!--외부스크립트-->
+    <title> 21_오유성 script </title>
+    <script language="JavaScript" src="09_21.js">
+    </script>
+  </head>
+
+  <body>
+    <h1> 1. 내부 스크립트 </h1>
+    <script language = "JavaScript">
+      document.write("*** 여기는 body 내 자바스크립트 ***")
+    </script>
+    <br>
+
+    <h1> 2. 외부 스크립트 </h1>
+    <button type="button" onclick="test1()"> 외부 </button>
+
+    <h1> 3. 인라인 스크립트 </h1>
+    <a href="javascript:alert('환영합니다')"> 경고메세지 </a> <br>
+    <a href="javascript:document.write('자바스크립트로 동작하는 페이지입니다.')"> 클릭하세요 </a>
+
+    <h1> for문 연습 </h1>
+    <script language = "JavaScript">
+      for (i=1; i<=7; i++){  /*for문*/
+        document.write("<font size=", i, "> 어서오세요. </font><br>")
+      }
+    </script>
+
+    <h1> if문 연습 </h1>
+    <script language = "JavaScript">
+      busy = " 바쁨"
+      document.write("<b>당신은" + busy + "니까?<br><br>")
+      if (busy==" 바쁨") document.write(busy + ": 지하철을 타세요</b>")
+      if (busy==" 안바쁨") document.write(busy + ": 버스를 타세요</b>")
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21_오유성</title>
+    <!-- 외부 스크립트를 위한 코드 -->
+    <script src="10_21.js"></script>
+</head>
+<body>
+    <h1>1. 내부 스크립트</h1>
+    <script>
+        document.write("***여기는 body 내 자바스크립트***")
+    </script>
+
+    <h1>2. 외부 스크립트</h1>
+    <button type="button" onclick="test1()"> 오유성 </button>
+
+    <h1>3. 인라인 스크립트</h1>
+    <a href="javascript:alert('Welcome!')">click</a>
+
+    <h1>4. 나를 눌러보아</h1>
+    <h3 onclick="document.write('마우스 클릭');">나를 눌러보아</h3>
+
+    <h1>5. 전구: alert</h1>
+    <img src="off.gif"
+    onmouseover="src='on.gif';"
+    onmouseleave="src='off.gif';">
+    <br>
+    <button onclick="alert('전구에 마우스를 올려보세요!')"> 전구 on/off 방법 </button>
+
+    <h1>6. confirm</h1>
+    <script>
+        answer = confirm("전구를 켤까요?");
+        // document.write("answer: ", answer); //확인 -> true, 취소 -> false가 나옴.
+        if (answer==true){
+            document.write("<img src='on.gif'>");
+            document.write("<br> 전구 On <br>");
+        } else{
+            document.write("<img src='off.gif'");
+            document.write("<br>")
+            document.write("<br> 전구 Off <br>");
+        }
+    </script>
+
+    <h1>7. prompt</h1>
+    <script>
+        // 입력받고 total, avg 계산
+        name = prompt("이름은?");
+        kor = prompt("국어 시험성적은?");
+        math = prompt("수학 시험성적은?");
+        total = Number(kor) + Number(math);  //형변환
+        avg = total/2;
+        document.write("총점: " + total + "<br>평균: " + avg + "<br><br>");
+
+        // 테이블 작성
+        document.write("<table border=1  cellpadding='5px'>");
+        document.write("<tr align='center' bgcolor='gainsboro'><th>이름</th> <td>" + name + "</td></tr>");
+        document.write("<tr align='center'><th>국어</th> <td>" + kor + "점</td></tr>");
+        document.write("<tr align='center'><th>수학</th> <td>" + math + "점</td></tr>");
+        document.write("<tr align='center'><th>총점</th> <td>" + total + "점</td></tr>");
+        document.write("<tr align='center'><th>평균</th> <td>" + avg + "점</td></tr>");
+        document.write("</table>");
+    </script>
+
+    <h1>8. if test</h1>
+    <script>
+        score = prompt("성적은?");
+        if (score >= 90) grade = "A";
+        else if (score >= 80) grade = "B";
+        else if (score >= 70) grade = "C";
+        else if (score >= 60) grade = "D";
+        else grade = "F";
+
+        document.write("당신의 성적은 " + grade + "입니다.")
+    </script>
+
+    <h1>9. for test</h1>
+    <script>
+        for(i=0; i<10; i++){
+            document.write("Welcome to JavaScript! <br>");
+        }
+        // 5의 배수만 출력하기 1: for
+        document.write("<br>")
+        for(i=1; i<=50; i++){
+            if(i%5==0){
+                document.write(i + "<br>")
+            }else{
+                continue;
+            }
+        }
+        // 5의 배수만 출력하기 2: do-while
+        document.write("<br>")
+        i = 5;  // i값 초기화
+        do{
+            document.write("5의 배수: ",i,"<br>");
+            i+=5;
+        }while(i<=51);
+    </script>
+</body>
+</html>
